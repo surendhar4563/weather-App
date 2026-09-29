@@ -1,0 +1,67 @@
+.weather-details {
+  animation: fadeInUp 0.5s ease 0.1s both;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.detail-card {
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detail-icon {
+  font-size: 1.2rem;
+}
+
+.detail-label {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 500;
+}
+
+.detail-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.detail-sub {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Progress bar */
+.detail-bar-track {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.detail-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 100%;
+}
+
+@media (max-width: 480px) {
+  .details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

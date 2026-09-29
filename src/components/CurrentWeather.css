@@ -1,0 +1,144 @@
+.current-weather {
+  padding: 28px;
+  animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Top row: location + icon */
+.cw-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.cw-location {}
+
+.city-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.local-time {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.cw-icon-area {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.weather-emoji {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+}
+
+.weather-icon-img {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+}
+
+/* Main temp block */
+.cw-main {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.temp-display {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.temp-value {
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -4px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.temp-unit {
+  font-size: 2rem;
+  font-weight: 600;
+  padding-top: 8px;
+  opacity: 0.8;
+}
+
+.weather-desc {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 4px;
+}
+
+.feels-like {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* Min/Max range */
+.cw-range {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 12px 0;
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+  margin-bottom: 16px;
+}
+
+.temp-range-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.range-icon {
+  font-size: 0.8rem;
+}
+
+.range-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--glass-border);
+}
+
+/* Sunrise / Sunset */
+.cw-sun-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.sun-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.sun-item strong {
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .temp-value { font-size: 4rem; }
+  .city-name  { font-size: 1.2rem; }
+}

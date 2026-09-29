@@ -1,0 +1,105 @@
+/* =========================================================
+   3D WEATHER SEASONS BACKGROUND STYLES
+   ========================================================= */
+
+.weather-bg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  transition: background 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.weather-bg-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.weather-bg-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.1) 100%);
+  transition: background 1.2s ease;
+}
+
+/* =========================================================
+   DYNAMIC ATMOSPHERIC PALETTES & SEASONS
+   ========================================================= */
+
+/* 1. Sunny / Summer / Radiant Skies */
+.weather-bg-container.sunny {
+  background: linear-gradient(180deg, #0284c7 0%, #38bdf8 45%, #7dd3fc 75%, #bae6fd 100%);
+}
+
+/* 2. Partly Cloudy (e.g. Broken Clouds, Scattered Clouds in daytime) */
+.weather-bg-container.partly-cloudy {
+  background: linear-gradient(180deg, #0369a1 0%, #0284c7 35%, #38bdf8 70%, #bae6fd 100%);
+}
+
+/* 3. Overcast Clouds (Heavy Cloud Cover Day) */
+.weather-bg-container.overcast {
+  background: linear-gradient(180deg, #334155 0%, #475569 35%, #64748b 70%, #94a3b8 100%);
+}
+
+/* 4. Rain & Showers (Daytime) */
+.weather-bg-container.rain {
+  background: linear-gradient(180deg, #0f172a 0%, #1e293b 35%, #25446a 70%, #3b608a 100%);
+}
+
+/* 5. Rain at Night */
+.weather-bg-container.rain-night {
+  background: linear-gradient(180deg, #050b14 0%, #0b1527 35%, #10213d 70%, #182e52 100%);
+}
+
+/* 6. Thunderstorm & Lightning */
+.weather-bg-container.thunderstorm {
+  background: linear-gradient(180deg, #080a14 0%, #10142b 35%, #191b3f 65%, #231d52 100%);
+}
+
+/* 7. Winter Snow (Daytime) */
+.weather-bg-container.snow {
+  background: linear-gradient(180deg, #1e3a8a 0%, #2563eb 35%, #60a5fa 70%, #dbeafe 100%);
+}
+
+/* 8. Winter Snow (Nighttime) */
+.weather-bg-container.snow-night {
+  background: linear-gradient(180deg, #020617 0%, #0c1833 35%, #162a52 70%, #1e3a6a 100%);
+}
+
+/* 9. Clear Night / Starry Celestial Sky */
+.weather-bg-container.clear-night {
+  background: linear-gradient(180deg, #020617 0%, #070d24 35%, #0f1c3f 70%, #1a1e4a 100%);
+}
+
+/* 10. Cloudy Night / Moonlit Sky */
+.weather-bg-container.cloudy-night {
+  background: linear-gradient(180deg, #030712 0%, #091024 35%, #0f1a36 70%, #162444 100%);
+}
+
+/* 11. Fog, Mist & Haze */
+.weather-bg-container.fog,
+.weather-bg-container.fog-night {
+  background: linear-gradient(180deg, #1e293b 0%, #334155 35%, #475569 70%, #64748b 100%);
+}
+
+/* 12. Winter Frost / Freezing Clear Day */
+.weather-bg-container.winter-clear {
+  background: linear-gradient(180deg, #1e40af 0%, #3b82f6 35%, #93c5fd 75%, #eff6ff 100%);
+}
+
+/* Deeper vignette overlays for dramatic nights and storms */
+.weather-bg-container.clear-night .weather-bg-overlay,
+.weather-bg-container.cloudy-night .weather-bg-overlay,
+.weather-bg-container.rain-night .weather-bg-overlay,
+.weather-bg-container.thunderstorm .weather-bg-overlay {
+  background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.35) 100%);
+}

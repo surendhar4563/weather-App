@@ -1,0 +1,204 @@
+/* Search Wrapper */
+.search-wrapper {
+  position: relative;
+  margin-bottom: 12px;
+  z-index: 100;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+}
+
+.search-input-group {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 10px;
+}
+
+.search-icon {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1.05rem;
+  font-family: inherit;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.search-loader {
+  font-size: 0.9rem;
+  animation: pulse 1s infinite alternate;
+}
+
+.clear-btn {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.clear-btn:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.geo-btn,
+.search-btn {
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+
+.geo-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 1.15rem;
+  padding: 8px 12px;
+}
+
+.geo-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.08);
+}
+
+.geo-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.search-btn {
+  background: rgba(96, 165, 250, 0.65);
+  color: white;
+  border: 1px solid rgba(96, 165, 250, 0.45);
+}
+
+.search-btn:hover {
+  background: rgba(96, 165, 250, 0.9);
+  transform: translateY(-1px);
+}
+
+/* Dropdown */
+.search-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  padding: 8px;
+  max-height: 380px;
+  overflow-y: auto;
+  animation: dropIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-label {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 4px 6px 8px;
+  font-weight: 600;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  background: transparent;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-align: left;
+  transition: all 0.18s ease;
+  cursor: pointer;
+}
+
+.dropdown-item:hover,
+.dropdown-item.selected,
+.dropdown-item.active {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateX(3px);
+}
+
+.dropdown-icon {
+  font-size: 1rem;
+  opacity: 0.75;
+}
+
+/* Suggestion Item details */
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.suggestion-flag {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.suggestion-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.suggestion-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.suggestion-sub {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.65);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.suggestion-coords {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-family: monospace;
+  margin-left: 8px;
+}
+
+.current-badge {
+  margin-left: auto;
+  background: rgba(96, 165, 250, 0.4);
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 20px;
+}

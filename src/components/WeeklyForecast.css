@@ -1,0 +1,127 @@
+.weekly-forecast {
+  animation: fadeInUp 0.5s ease 0.3s both;
+}
+
+.weekly-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.weekly-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  transition: transform 0.25s;
+}
+
+.weekly-card:hover {
+  transform: translateX(4px);
+}
+
+/* Day name column */
+.weekly-day-col {
+  width: 70px;
+  flex-shrink: 0;
+}
+
+.weekly-day {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.weekly-date {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* Icon column */
+.weekly-icon-col {
+  display: flex;
+  align-items: center;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.weekly-emoji {
+  font-size: 1.4rem;
+}
+
+.weekly-icon {
+  width: 36px;
+  height: 36px;
+  margin-left: -8px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+/* Description */
+.weekly-desc {
+  flex: 1;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+
+/* Rain chance */
+.weekly-rain {
+  font-size: 0.8rem;
+  color: #93c5fd;
+  font-weight: 600;
+  min-width: 48px;
+  text-align: right;
+}
+
+/* Temperature bar */
+.weekly-temps {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 180px;
+  flex-shrink: 0;
+}
+
+.weekly-high {
+  font-size: 0.95rem;
+  font-weight: 700;
+  min-width: 36px;
+  text-align: right;
+}
+
+.weekly-low {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  min-width: 36px;
+}
+
+.temp-bar-track {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.temp-bar-fill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #60a5fa, #fb923c);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 600px) {
+  .weekly-card {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .weekly-temps {
+    min-width: 100%;
+  }
+  .weekly-desc {
+    min-width: 100px;
+  }
+}
